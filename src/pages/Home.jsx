@@ -80,7 +80,7 @@ function Home() {
         <div className="absolute left-1/2 top-1/2 h-[55%] w-[55%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#ed809d]/10 blur-[80px]" />
 
         <model-viewer
-          src="/silent_ash.glb"
+          src="/phoenix_bird.glb"
           alt="Modelo 3D"
           shadow-intensity="1"
           exposure="1"
