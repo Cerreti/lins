@@ -1,173 +1,430 @@
-import "@google/model-viewer";
+import { Link } from "react-router-dom";
 
 function Home() {
   return (
-    <main className="relative min-h-[calc(100vh-80px)] w-full overflow-hidden bg-[#242624] text-white">
+    <main className="min-h-screen bg-[#DED973] text-[#3D1A16]">
 
-      {/* FAIXA ROSA */}
-      <div className="absolute left-0 top-0 h-full w-[55px] bg-[#ed809d] md:w-[75px]" />
+      {/* FAIXA LATERAL */}
 
-      {/* LINHAS */}
-      <div className="absolute left-[55px] right-0 top-0 h-px bg-white/10 md:left-[75px]" />
-      <div className="absolute bottom-0 left-[55px] right-0 h-px bg-white/10 md:left-[75px]" />
+      <div className="fixed left-0 top-0 z-40 h-full w-[4px] bg-[#E46092]" />
 
-      {/* DECORAÇÃO SUPERIOR */}
-      <img
-        src="/HomeIcon.png"
-        alt=""
-        className="pointer-events-none absolute left-[65px] top-[25px] size-[180px] rotate-180 object-contain opacity-30 md:left-[100px] md:size-[260px]"
-      />
 
-      {/* DECORAÇÃO INFERIOR */}
-      <img
-        src="/HomeIcon.png"
-        alt=""
-        className="pointer-events-none absolute bottom-[-30px] right-[-20px] size-[220px] object-contain opacity-30 md:size-[300px]"
-      />
+      {/* =====================================================
+          HERO
+      ====================================================== */}
 
-      {/* PEQUENA LINHA LATERAL */}
-      <div className="absolute left-[85px] top-[250px] hidden h-[130px] w-px bg-white/30 md:block" />
+      <section className="relative flex min-h-screen flex-col px-[7%]">
 
-      {/* NÚMERO */}
-      <div className="absolute left-[70px] top-[110px] z-20 md:left-[105px]">
-        <span className="font-serif text-[28px] text-white/30 md:text-[34px]">
-          01
-        </span>
+        {/* CABEÇALHO */}
 
-        <div className="mt-2 h-px w-8 bg-[#ed809d]" />
-      </div>
+        <div className="flex items-center justify-between border-b border-[#3D1A16]/10 py-7">
 
-      {/* TÍTULO */}
-      <section className="absolute left-[90px] top-[150px] z-20 md:left-[160px] md:top-[150px]">
+          <span className="text-[9px] font-black uppercase tracking-[0.35em]">
+            Rise Company
+          </span>
 
-        <p className="mb-5 text-[9px] uppercase tracking-[0.5em] text-[#ed809d] md:text-[11px]">
-          Creative Studio
-        </p>
+          <span className="text-[8px] font-bold uppercase tracking-[0.3em] text-[#3D1A16]/40">
+            Creative Studio
+          </span>
 
-        <h1 className="font-serif uppercase leading-[0.8] tracking-[-0.06em]">
+        </div>
 
-          <span className="block text-[72px] sm:text-[90px] md:text-[120px]">
-            {"RISE".split("").map((letter, index) => (
-              <span
-                key={index}
-                className="inline-block cursor-pointer transition-all duration-500 hover:-translate-y-3 hover:text-[#ed809d]"
-              >
-                {letter}
+
+        {/* LOGO */}
+
+        <div className="flex flex-1 items-center justify-center py-16">
+
+          <div className="w-full max-w-[1200px]">
+
+            <div className="mb-8 flex items-center justify-center gap-4">
+
+              <span className="h-[2px] w-8 bg-[#E46092]" />
+
+              <span className="text-[9px] font-black uppercase tracking-[0.45em] text-[#3D1A16]/55">
+                Company · Design · Concept
               </span>
-            ))}
+
+              <span className="h-[2px] w-8 bg-[#E46092]" />
+
+            </div>
+
+
+            {/* IMAGEM DA IDENTIDADE */}
+
+            <div className="mx-auto w-full">
+
+              <img
+                src="/Sun.jpeg"
+                alt="Rise Company"
+                className="mx-auto block h-auto w-full max-w-[1100px] object-contain"
+                draggable="false"
+              />
+
+            </div>
+
+
+            {/* FRASE */}
+
+            <div className="mt-10 flex flex-col items-center justify-center gap-5 text-center md:flex-row">
+
+              <span className="text-[11px] font-bold uppercase tracking-[0.3em] text-[#3D1A16]/45">
+                Design
+              </span>
+
+              <span className="hidden h-px w-10 bg-[#3D1A16]/20 md:block" />
+
+              <p className="max-w-[400px] text-[12px] font-medium leading-5 text-[#3D1A16]/60">
+                Criatividade, estratégia e tecnologia
+                para transformar ideias em experiências.
+              </p>
+
+              <span className="hidden h-px w-10 bg-[#3D1A16]/20 md:block" />
+
+              <span className="text-[11px] font-bold uppercase tracking-[0.3em] text-[#3D1A16]/45">
+                Concept
+              </span>
+
+            </div>
+
+
+            {/* BOTÃO */}
+
+            <div className="mt-10 flex justify-center">
+
+              <Link
+                to="/sobre"
+                className="group flex items-center gap-8 bg-[#3D1A16] px-8 py-5 text-[9px] font-bold uppercase tracking-[0.3em] text-[#F8F4D8] transition-all duration-300 hover:bg-[#E46092]"
+              >
+
+                Conheça a Rise
+
+                <span className="transition-transform duration-300 group-hover:translate-x-2">
+                  →
+                </span>
+
+              </Link>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        {/* RODAPÉ DO HERO */}
+
+        <div className="flex items-center justify-between border-t border-[#3D1A16]/10 py-5">
+
+          <span className="text-[8px] font-bold uppercase tracking-[0.3em] text-[#3D1A16]/35">
+            Brasil · 2026
           </span>
 
-          <span className="mt-5 block text-[28px] font-light tracking-[0.25em] text-white/70 sm:text-[36px] md:text-[46px]">
-            COMPANY
+          <span className="text-[8px] font-bold uppercase tracking-[0.3em] text-[#3D1A16]/35">
+            ↓ Role para explorar
           </span>
 
-        </h1>
-
-        <div className="mt-8 flex items-center gap-4">
-          <div className="h-px w-12 bg-[#ed809d] md:w-20" />
-
-          <span className="text-[8px] uppercase tracking-[0.35em] text-white/40 md:text-[10px]">
-            Digital • Creative • Identity
-          </span>
         </div>
 
       </section>
 
-      {/* MODELO 3D */}
-      <div className="absolute left-[50%] top-[52%] z-10 h-[480px] w-[480px] -translate-x-1/2 -translate-y-1/2 md:left-[57%] md:top-[53%] md:h-[680px] md:w-[680px]">
 
-        {/* HALO ATRÁS DO MODELO */}
-        <div className="absolute left-1/2 top-1/2 h-[55%] w-[55%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#ed809d]/10 blur-[80px]" />
+      {/* =====================================================
+          ESTATÍSTICAS
+      ====================================================== */}
 
-        <model-viewer
-          src="/phoenix_bird.glb"
-          alt="Modelo 3D"
-          shadow-intensity="1"
-          exposure="1"
-          auto-rotate
-          rotation-per-second="20deg"
-          camera-orbit="0deg 110deg 0deg"
-          disable-zoom
-          className="relative h-full w-full"
-        />
+      <section className="bg-[#3D1A16] px-[7%] py-20 text-[#F8F4D8]">
 
-      </div>
+        <div className="mx-auto max-w-[1100px]">
 
-      {/* TEXTO DIREITO */}
-      <section className="absolute right-[6%] top-[125px] z-20 hidden w-[280px] lg:block">
+          <div className="grid grid-cols-1 gap-12 sm:grid-cols-3 sm:gap-8">
 
-        <div className="mb-7 flex items-center gap-3">
-          <span className="h-2 w-2 rounded-full bg-[#ed809d]" />
 
-          <span className="text-[10px] font-semibold uppercase tracking-[0.4em] text-white/50">
-            Our approach
-          </span>
+            {/* +300 */}
+
+            <div>
+
+              <span className="block font-serif text-[58px] italic leading-none tracking-[-0.05em] text-[#C9C769] sm:text-[65px] md:text-[75px]">
+                +300
+              </span>
+
+              <div className="mt-4">
+
+                <span className="block text-[9px] font-black uppercase tracking-[0.3em] text-[#F8F4D8]/65">
+                  Marcas
+                </span>
+
+                <span className="block text-[9px] font-black uppercase tracking-[0.3em] text-[#F8F4D8]/65">
+                  Atendidas
+                </span>
+
+              </div>
+
+            </div>
+
+
+            {/* 10 */}
+
+            <div>
+
+              <span className="block font-serif text-[58px] italic leading-none tracking-[-0.05em] text-[#C9C769] sm:text-[65px] md:text-[75px]">
+                10
+              </span>
+
+              <div className="mt-4">
+
+                <span className="block text-[9px] font-black uppercase tracking-[0.3em] text-[#F8F4D8]/65">
+                  Anos
+                </span>
+
+                <span className="block text-[9px] font-black uppercase tracking-[0.3em] text-[#F8F4D8]/65">
+                  De mercado
+                </span>
+
+              </div>
+
+            </div>
+
+
+            {/* 9K+ */}
+
+            <div>
+
+              <span className="block font-serif text-[58px] italic leading-none tracking-[-0.05em] text-[#C9C769] sm:text-[65px] md:text-[75px]">
+                1K+
+              </span>
+
+              <div className="mt-4">
+
+                <span className="block text-[9px] font-black uppercase tracking-[0.3em] text-[#F8F4D8]/65">
+                  De vidas
+                </span>
+
+                <span className="block text-[9px] font-black uppercase tracking-[0.3em] text-[#F8F4D8]/65">
+                  transformadas
+                </span>
+
+              </div>
+
+            </div>
+
+          </div>
+
         </div>
 
-        <p className="mb-7 font-serif text-[25px] leading-tight text-white/90">
-          Ideas that become
-          <span className="text-[#ed809d]"> identity.</span>
-        </p>
+      </section>
 
-        <ul className="space-y-5 border-l border-white/10 pl-5">
 
-          <li className="text-[12px] leading-5 text-white/55 transition-colors duration-300 hover:text-white">
-            Transformando ideias em resultados.
-          </li>
+      {/* =====================================================
+          SOBRE
+      ====================================================== */}
 
-          <li className="text-[12px] leading-5 text-white/55 transition-colors duration-300 hover:text-white">
-            Marketing que conecta pessoas.
-          </li>
+      <section className="bg-[#F8F4D8] px-[8%] py-32">
 
-          <li className="text-[12px] leading-5 text-white/55 transition-colors duration-300 hover:text-white">
-            Sua marca, nosso propósito.
-          </li>
+        <div className="mx-auto grid max-w-[1400px] gap-12 md:grid-cols-[180px_1fr]">
 
-          <li className="text-[12px] leading-5 text-white/55 transition-colors duration-300 hover:text-white">
-            Criatividade que gera impacto.
-          </li>
+          <div>
 
-        </ul>
+            <span className="text-[9px] font-black uppercase tracking-[0.4em] text-[#E46092]">
+              01 — Sobre
+            </span>
 
-        <button className="group mt-9 flex items-center gap-5 border border-white/20 px-6 py-3 text-[9px] font-semibold uppercase tracking-[0.35em] transition-all duration-300 hover:border-[#ed809d] hover:bg-[#ed809d]">
-          Explorar
+          </div>
 
-          <span className="transition-transform duration-300 group-hover:translate-x-2">
-            →
-          </span>
-        </button>
+
+          <div className="max-w-[950px]">
+
+            <h2 className="text-[42px] font-black leading-[0.95] tracking-[-0.05em] sm:text-[55px] md:text-[75px]">
+
+              Ideias não precisam
+              <br />
+
+              apenas existir.
+
+              <br />
+
+              <span className="text-[#E46092]">
+                Elas precisam crescer.
+              </span>
+
+            </h2>
+
+
+            <p className="mt-10 max-w-[600px] text-[12px] font-medium leading-6 text-[#3D1A16]/55 md:text-[14px] md:leading-7">
+
+              A Rise Company é um estúdio criativo focado em
+              transformar ideias em marcas, experiências e
+              soluções digitais que realmente tenham identidade.
+
+            </p>
+
+
+            <Link
+              to="/sobre"
+              className="group mt-8 inline-flex items-center gap-6 border-b-2 border-[#3D1A16]/20 pb-3 text-[9px] font-bold uppercase tracking-[0.3em] transition-colors hover:border-[#E46092]"
+            >
+
+              Saiba mais
+
+              <span className="transition-transform duration-300 group-hover:translate-x-2">
+                →
+              </span>
+
+            </Link>
+
+          </div>
+
+        </div>
 
       </section>
 
-      {/* TEXTO MOBILE */}
-      <section className="absolute bottom-[40px] left-[90px] right-6 z-20 lg:hidden">
 
-        <p className="max-w-[320px] font-serif text-[21px] leading-tight text-white/80">
-          Ideas that become
-          <span className="text-[#ed809d]"> identity.</span>
-        </p>
+      {/* =====================================================
+          ESPECIALIDADES
+      ====================================================== */}
 
-        <button className="group mt-5 flex items-center gap-4 border border-white/20 px-5 py-3 text-[9px] uppercase tracking-[0.3em] transition hover:border-[#ed809d] hover:bg-[#ed809d]">
-          Explorar
-          <span className="transition-transform duration-300 group-hover:translate-x-2">
-            →
-          </span>
-        </button>
+      <section className="bg-[#3D1A16] px-[8%] py-32 text-[#F8F4D8]">
+
+        <div className="mx-auto max-w-[1400px]">
+
+          <div className="mb-16">
+
+            <span className="text-[9px] font-bold uppercase tracking-[0.4em] text-[#C9C769]">
+              02 — Especialidades
+            </span>
+
+            <h2 className="mt-6 text-[50px] font-black leading-none tracking-[-0.06em] sm:text-[65px] md:text-[85px]">
+              O que fazemos
+            </h2>
+
+          </div>
+
+
+          <div className="border-t border-[#F8F4D8]/15">
+
+            <div className="flex items-center justify-between border-b border-[#F8F4D8]/15 py-8">
+
+              <span className="text-[28px] font-black md:text-[40px]">
+                Branding
+              </span>
+
+              <span className="text-[10px] text-[#F8F4D8]/30">
+                01
+              </span>
+
+            </div>
+
+
+            <div className="flex items-center justify-between border-b border-[#F8F4D8]/15 py-8">
+
+              <span className="text-[28px] font-black md:text-[40px]">
+                Design
+              </span>
+
+              <span className="text-[10px] text-[#F8F4D8]/30">
+                02
+              </span>
+
+            </div>
+
+
+            <div className="flex items-center justify-between border-b border-[#F8F4D8]/15 py-8">
+
+              <span className="text-[28px] font-black md:text-[40px]">
+                Marketing
+              </span>
+
+              <span className="text-[10px] text-[#F8F4D8]/30">
+                03
+              </span>
+
+            </div>
+
+
+            <div className="flex items-center justify-between border-b border-[#F8F4D8]/15 py-8">
+
+              <span className="text-[28px] font-black md:text-[40px]">
+                Desenvolvimento Web
+              </span>
+
+              <span className="text-[10px] text-[#F8F4D8]/30">
+                04
+              </span>
+
+            </div>
+
+          </div>
+
+        </div>
 
       </section>
 
-      {/* RODAPÉ DECORATIVO */}
-      <div className="absolute bottom-7 left-[70px] z-20 text-[8px] tracking-[0.35em] text-white/30 md:left-[105px]">
-        RISE COMPANY
-      </div>
 
-      <div className="absolute bottom-7 right-[7%] hidden items-center gap-4 lg:flex">
-        <span className="text-[9px] tracking-[0.3em] text-white/30">
-          SCROLL TO EXPLORE
-        </span>
+      {/* =====================================================
+          CTA
+      ====================================================== */}
 
-        <div className="h-px w-24 bg-white/20" />
-      </div>
+      <section className="bg-[#E46092] px-[8%] py-28 text-[#3D1A16]">
+
+        <div className="mx-auto flex max-w-[1400px] flex-col justify-between gap-12 md:flex-row md:items-end">
+
+          <div>
+
+            <span className="text-[9px] font-black uppercase tracking-[0.4em]">
+              Vamos criar juntos?
+            </span>
+
+            <h2 className="mt-6 text-[55px] font-black leading-[0.85] tracking-[-0.06em] sm:text-[70px] md:text-[95px]">
+
+              Tem uma ideia?
+
+              <br />
+
+              <span className="text-[#F8F4D8]">
+                Vamos criar.
+              </span>
+
+            </h2>
+
+          </div>
+
+
+          <Link
+            to="/contato"
+            className="group flex w-fit items-center gap-8 bg-[#3D1A16] px-8 py-5 text-[9px] font-bold uppercase tracking-[0.3em] text-[#F8F4D8] transition-all duration-300 hover:bg-[#F8F4D8] hover:text-[#3D1A16]"
+          >
+
+            Entrar em contato
+
+            <span className="transition-transform duration-300 group-hover:translate-x-2">
+              →
+            </span>
+
+          </Link>
+
+        </div>
+
+      </section>
+
+
+      {/* =====================================================
+          FOOTER
+      ====================================================== */}
+
+      <footer className="bg-[#3D1A16] px-[8%] py-8 text-[#F8F4D8]">
+
+        <div className="mx-auto flex max-w-[1400px] flex-col gap-4 border-t border-[#F8F4D8]/15 pt-6 sm:flex-row sm:items-center sm:justify-between">
+
+          <span className="text-[8px] font-bold uppercase tracking-[0.35em] text-[#F8F4D8]/40">
+            Rise Company © 2026
+          </span>
+
+          <span className="text-[8px] font-bold uppercase tracking-[0.35em] text-[#F8F4D8]/40">
+            Estratégia · Design · Tecnologia
+          </span>
+
+        </div>
+
+      </footer>
 
     </main>
   );
